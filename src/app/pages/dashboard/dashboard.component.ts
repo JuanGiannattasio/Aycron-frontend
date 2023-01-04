@@ -11,6 +11,7 @@ import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ChooseDialogComponent } from '../../components/choose-dialog/choose-dialog.component';
+import { UserService } from '../../services/user.service';
 
 export interface ConfirmDialogData {
   title: string,
@@ -45,7 +46,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private warehouseService: WarehouseService,
     private toastr: ToastrService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public userService: UserService
   ) { }
   
   ngOnDestroy(): void {
@@ -148,8 +150,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return `${data.month()}_${data.day()}_${data.year()}.${type}`;
   }
 
-  test() {
-    console.log(this.inputForm);
+  goToMap() {
     this.router.navigateByUrl(`/dashboard/map/${this.inputForm}`);
   }
 

@@ -52,17 +52,17 @@
 </div>
 
 <div style="display: flex; justify-content: space-between; margin-top: 10px; padding: 0 10%;">
-    <div style="display: flex;">
+    <div *ngIf="userService.user.role === 'ADMIN_ROLE'" style="display: flex;">
         <input mat-input type="text" [(ngModel)]="inputForm" required placeholder="Address">
         <button 
             mat-raised-button 
             color="primary" 
-            (click)="test()"
+            (click)="goToMap()"
             >
-            <!-- [routerLink]="['/dashboard/map']" -->
             Map
         </button>
     </div>
+    <div *ngIf="userService.user.role !== 'ADMIN_ROLE'"></div>
     <button 
         mat-raised-button 
         color="primary" 

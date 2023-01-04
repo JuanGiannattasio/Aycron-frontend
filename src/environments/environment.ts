@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   base_url: 'http://localhost:3001/api',
+  // base_url: 'https://aycron-test-153c8.web.app/api',
   mapboxKey: 'pk.eyJ1IjoianVhbm1hOTQyIiwiYSI6ImNrbndmNmZlNDBiNWMydnBibDVnazRmc2sifQ.cDJ37m2rBLgUQmzen1bw8Q'
 };
 
