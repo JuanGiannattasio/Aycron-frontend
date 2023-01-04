@@ -17,7 +17,7 @@ import { ConfirmDialogData } from 'src/app/pages/dashboard/dashboard.component';
         style="flex: 1;"
         color="primary"
       >
-        Archivo Subido
+        Uploaded file
       </button>
       <button
         mat-flat-button
@@ -27,7 +27,7 @@ import { ConfirmDialogData } from 'src/app/pages/dashboard/dashboard.component';
         cdkFocusInitial
         style="flex: 1"
       >
-        PDF de la tabla
+        PDF of the table
       </button>
     </div>
   `,

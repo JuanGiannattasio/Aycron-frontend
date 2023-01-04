@@ -37,7 +37,7 @@ export class MapComponent implements OnInit {
           coordinates = resp.features[0].center;
           setTimeout(() => {
             this.mS.addMarkerCustom(coordinates, true);
-          });
+          }, 200);
           this.mS.buildMap(coordinates[0], coordinates[1]).then(({geocoder, map}) => {
   
             this.render2.appendChild(
@@ -63,7 +63,7 @@ export class MapComponent implements OnInit {
             setTimeout(() => {
               this.mS.addMarkerCustom([warehouse.lat as number, warehouse.long as number], false);
               this.mS.laodCoords(coords);
-            });
+            }, 200);
           })
         })
       }
