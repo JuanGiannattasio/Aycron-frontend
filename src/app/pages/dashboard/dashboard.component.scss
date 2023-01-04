@@ -1,0 +1,13 @@
+
+
+.mainTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    table {
+        margin-top: 15px;
+        width: 80%;
+    }
+}

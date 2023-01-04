@@ -1,0 +1,161 @@
+
+<div class="container">
+    <h2
+        class="title"
+    >
+        Create warehouse
+    </h2>
+
+    <h2 class="subtitle">Information</h2>
+
+    <form [formGroup]="miForm" (submit)="save()">
+
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Upload file
+            </h4>
+
+            
+            <input 
+                type="file"
+                (change)="changeImage($event)"
+                [required]="true"
+            >
+        </div>
+
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Code
+            </h4>
+            <div class="input">
+                <input 
+                    type="text"
+                    required
+                    autocomplete="off"
+                    formControlName='code'
+                    placeholder="Code"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('code')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Name
+            </h4>
+            <div class="input">
+                <input 
+                    type="text"
+                    required
+                    autocomplete="off"
+                    formControlName='name'
+                    placeholder="Name"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('name')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Address
+            </h4>
+            <div class="input">
+                <input 
+                    type="text"
+                    required
+                    autocomplete="off"
+                    formControlName='address'
+                    placeholder="Address"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('address')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                State
+            </h4>
+            <div class="input">
+                <input 
+                    type="text"
+                    required="true"
+                    autocomplete="off"
+                    formControlName='state'
+                    placeholder="State"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('state')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Country
+            </h4>
+            <div class="input">
+                <input 
+                    type="text"
+                    autocomplete="off"
+                    formControlName='country'
+                    placeholder="Country"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('country')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <h4>
+                <i class="fas fa-file-signature"></i>
+                Zip
+            </h4>
+            <div class="input">
+                <input 
+                    type="number"
+                    autocomplete="off"
+                    formControlName='zip'
+                    placeholder="Zip"
+                />
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="validCamp('zip')" 
+                >
+                    Como minimo 3 letras
+                </span>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="buttons">
+            <a class="btn" routerLink="/dashboard">Cancel</a>
+            <button [disabled]="!miForm.valid" class="btn button" type="submit">Save</button>
+        </div>
+
+    </form>
+</div>

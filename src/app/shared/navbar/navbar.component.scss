@@ -1,0 +1,113 @@
+@import '../../../variables';
+
+.main {
+    padding: 20px 5%;
+    background: #272727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
+
+    transition: .3s background;
+
+    @keyframes rotate {
+        to {
+            transform: rotate(180deg)
+        }
+    }
+
+    #menu-btn {
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+
+        .space {
+            display: inline-block;
+            width: 20rem;
+        }
+
+        .icon {
+            // display: flex;
+            @include title-text(1rem);
+            margin-right: 15px;
+            
+            i {
+                margin-right: 5px;
+                color: $white;
+            }
+        }
+  
+        
+        
+    }
+
+    .text {
+        position: absolute;
+        top: .5rem;
+        left: 49.5%;
+        transform: translateX(-50%);
+
+        h2 {
+            @include title-text(2.2rem);
+        }
+    }
+
+    .fa-times, .fa-bars {
+        animation: rotate .2s;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .main {
+        justify-content: flex-end;
+
+        .text {
+            transform: translateX(0);
+            left: 1rem;
+            top: 1rem;
+
+            h2 {
+                @include title-text(1.8rem);
+            }
+        }
+
+        #menu-btn {
+            display: inline-block;
+        }
+
+        .navbar {
+            display: block;
+            position: absolute;
+            top: 6.2%;
+            left: 0;
+            right: 0;
+            background: #272727f8;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            .space {
+                display: none;
+            }
+
+            .icon {
+                display: block;
+                margin: 1.7rem .7rem;
+            }
+
+
+
+        }
+    }
+}
+

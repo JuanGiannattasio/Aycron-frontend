@@ -1,0 +1,145 @@
+@import '../../../styles.scss';
+
+
+.container {
+    padding: 0 25%;
+    margin: 40px auto 0;
+    color: $white;
+
+    .title {
+        text-align: center;
+        @include title-text(35px)
+    }
+    
+    .title2 {
+        text-align: center;
+        @include title-text(28px);
+        margin-top: 15px;
+    }
+
+    .subtitle {
+        @include grap-text(15px);
+        text-align: center;
+        margin-top: 10px;
+        font-size: 15px;
+        margin-bottom: 60px;
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+
+        h4 {
+            font-size: 21px;
+        }
+
+        .image2 {
+            width: 100px;
+        }
+
+        .input {
+            
+
+            .w200 {
+                width: 200px;
+                cursor: pointer;
+            }
+
+            input {
+                background: transparent;
+                border: none;
+                color: $white;
+                outline: none;
+                border-bottom: 2px solid $white;
+                border-radius: 1px;
+                font-weight: 500;
+                font-size: 20px;
+                width: 300px;
+
+                transition: border-color .3s;
+
+                &:focus {
+                    border-bottom: 2px solid $yellow;
+
+                }
+
+                &:hover {
+                    border-bottom: 2px solid $yellow;
+                }
+            }
+        }
+    }
+
+    hr {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+}
+
+
+@media( max-width: 900px ) {
+    .container {
+        
+        .title {
+            text-align: center;
+            @include title-text(2rem);
+            margin-bottom: 20px
+        }
+        
+        .box {
+            display: block;
+
+            h4 {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            img {
+                width: 150px;
+                display: block;
+                margin: auto;
+            }
+
+            .input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 55px;
+
+                input {
+                    width: 200px;
+                    text-align: center;
+                }
+            }
+
+
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        
+        .title {
+            text-align: center;
+            @include title-text(1.8rem);
+            margin-bottom: 20px
+        }
+        
+        .box {
+            .input {
+                input {
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+    

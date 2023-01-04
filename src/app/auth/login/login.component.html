@@ -1,0 +1,50 @@
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<form
+    [formGroup]="miForm"
+    (submit)="login()"
+>
+    <h3>Ingresar Aquí</h3>
+
+    <label for="username">Username</label>
+    <input 
+        type="text" 
+        placeholder="Email" 
+        autocomplete="off"
+        formControlName='email'  
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('email')" 
+    >
+        *El email es requerido
+    </span>
+
+
+    <label for="password">Password</label>
+    <input 
+        type="password" 
+        placeholder="Password"
+        formControlName='password'    
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('password')" 
+    >
+        *El password es requerido
+    </span>
+
+
+    <button>Ingresar</button>
+
+    
+    <div class="accounts">
+        No tienes una cuenta? Creala 
+        <a routerLink='/register'>Aquí</a>
+    </div>
+    
+</form>

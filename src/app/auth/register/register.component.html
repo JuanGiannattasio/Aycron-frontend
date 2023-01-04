@@ -1,0 +1,81 @@
+
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<form
+    [formGroup]="miForm"
+    (submit)="createUser()"
+>
+    <h3>Registrate Aquí</h3>
+
+    <label for="username">Nombre</label>
+    <input 
+        type="text" 
+        placeholder="Nombre" 
+        autocomplete="off"
+        formControlName='name'  
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('name')" 
+    >
+        *El nombre es requerido
+    </span>
+
+
+    <label for="username">Email</label>
+    <input 
+        type="text" 
+        placeholder="Email" 
+        autocomplete="off"
+        formControlName='email'  
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('email')" 
+    >
+        *El email es requerido
+    </span>
+
+
+    <label for="username">Password</label>
+    <input 
+        type="password" 
+        placeholder="Password" 
+        autocomplete="off"
+        formControlName='password'  
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('password')" 
+    >
+        *El password es requerido
+    </span>
+
+
+    <label for="password">Repetir password</label>
+    <input 
+        type="password" 
+        placeholder="Repetir Password"
+        formControlName='password2'    
+    />
+    <span 
+        class="error_text"
+        *ngIf="validCamp('password2')" 
+    >
+        Los passwords deben coincidir
+    </span>
+
+
+    <button>Ingresar</button>
+
+    
+    <div class="accounts">
+       Ya tienes una cuenta? Ingresa 
+        <a routerLink='/login'>Aquí</a>
+    </div>
+    
+</form>
